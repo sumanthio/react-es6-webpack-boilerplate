@@ -1,4 +1,5 @@
 import React from 'react';
+import TextField from 'material-ui/lib/text-field';
 import Firebase from 'firebase';
 
 export default class Contact extends React.Component{
@@ -22,7 +23,23 @@ export default class Contact extends React.Component{
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <Card>
+            <form onSubmit={this.handleSubmit.bind(this)}>
+                <TextField
+                  hintText="Password Field"
+                  floatingLabelText="Password"
+                  type="password"
+                /><br/>
+                <TextField
+                  hintText="MultiLine with rows: 2 and rowsMax: 4"
+                  multiLine={true}
+                  rows={2}
+                  rowsMax={4}
+                /><br/>
+          </form>
+
+      </Card>
+
         Name<input type="text" ref="username"/>
         Email<input type="email" ref="email"/>
         <textarea ref='message'></textarea>
