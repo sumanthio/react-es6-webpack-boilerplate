@@ -18,9 +18,9 @@ export default class Me extends React.Component{
 
   render() {
     return (
-      <div className="row main-page">
-        <Card style={style} className='col-sm-10 col-lg-6 col-lg-offset-3'>
-         <CardMedia className='crop' overlay={<CardTitle title="Sumanth " subtitle="Hi there, I am Sumanth, a Web Engineer from Hyderabad, India with three years of progressive experience" />}>
+      <div className="row">
+        <Card style={style} className="col-xs-12 col-sm-12 col-lg-6 col-lg-offset-3">
+         <CardMedia overlay={<CardTitle title="Sumanth " subtitle="Hi there, I am Sumanth, a Web Engineer from Hyderabad, India with three years of progressive experience" />}>
            <img src="assets/mainpic.jpg" />
          </CardMedia>
          <Paper zDepth={5}>
