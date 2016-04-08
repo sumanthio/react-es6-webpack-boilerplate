@@ -9,19 +9,31 @@ import CardText from 'material-ui/lib/card/card-text';
 import Paper from 'material-ui/lib/paper';
 
 const style = {
-height: 50,
-width: 200,
-margin: 20,
-textAlign: 'center',
-display: 'inline-block',
+  textAlign: 'center',
+  display: 'inline-block',
 };
+
+
 export default class Me extends React.Component{
+
   render() {
     return (
-      <div>
-        <Paper style={style} zDepth={5}>
-        loremloremloremloremloremloremloremloremloremlorem
-        </Paper>
+      <div className="row main-page">
+        <Card style={style} className='col-sm-10 col-lg-6 col-lg-offset-3'>
+         <CardMedia className='crop' overlay={<CardTitle title="Sumanth " subtitle="Hi there, I am Sumanth, a Web Engineer from Hyderabad, India with three years of progressive experience" />}>
+           <img src="assets/mainpic.jpg" />
+         </CardMedia>
+         <Paper zDepth={5}>
+         <CardTitle title="Card title" subtitle="Card subtitle" />
+         <CardText>
+          Hi there, I am Sumanth, a Web Engineer from Hyderabad, India with three years of progressive experience in web making. Freelanced as a PHP dev for a PR agency. And then began my journey as a UI Engineer, with Fission Labs. On the other side of coin, I am a Keyboard (as in the Musical Instrument) artist and I freelance that as well...) About to start my Youtube career as a cover artist.
+         </CardText>
+         <CardActions>
+           <FlatButton label="Action1" />
+           <FlatButton label="Action2" />
+         </CardActions>
+         </Paper>
+       </Card>
       </div>
     )
   }

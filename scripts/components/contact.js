@@ -1,5 +1,11 @@
 import React from 'react';
 import TextField from 'material-ui/lib/text-field';
+import Card from 'material-ui/lib/card/card';
+import CardActions from 'material-ui/lib/card/card-actions';
+import CardHeader from 'material-ui/lib/card/card-header';
+import CardMedia from 'material-ui/lib/card/card-media';
+import CardTitle from 'material-ui/lib/card/card-title';
+import Paper from 'material-ui/lib/paper';
 import Firebase from 'firebase';
 
 export default class Contact extends React.Component{
@@ -22,7 +28,7 @@ export default class Contact extends React.Component{
   }
   render() {
     return (
-      <div>
+      <div className="row col-sm-12 center-xs center-lg">
         <Card>
             <form onSubmit={this.handleSubmit.bind(this)}>
                 <TextField
@@ -36,15 +42,8 @@ export default class Contact extends React.Component{
                   rows={2}
                   rowsMax={4}
                 /><br/>
-          </form>
-
-      </Card>
-
-        Name<input type="text" ref="username"/>
-        Email<input type="email" ref="email"/>
-        <textarea ref='message'></textarea>
-        <button type='submit'>Submit</button>
-        </form>
+            </form>
+          </Card>
       </div>
     )
   }

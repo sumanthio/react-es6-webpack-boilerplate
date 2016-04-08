@@ -2,6 +2,7 @@ import React from 'react';
 import LeftNav from 'material-ui/lib/left-nav';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import AppBar from 'material-ui/lib/app-bar';
+import Colors from 'material-ui';
 import { Router, Link , browserHistory} from 'react-router';
 import Me from './me';
 import Work from './work';
@@ -14,7 +15,6 @@ export default class Header extends React.Component {
     super();
     this.state = {open: false};
   }
-
   handleToggle = () => this.setState({open: !this.state.open});
 
   handleClose = () => this.setState({open: false});
@@ -32,11 +32,14 @@ export default class Header extends React.Component {
     });
   }
   render(){
+    const styles = {
+      color: Colors.black
+    }
     return(
       <div>
-      <AppBar title="SUM4NTH" onLeftIconButtonTouchTap={this.toggleNav.bind(this)} />
+      <AppBar style={styles} title="SUM4NTH" onLeftIconButtonTouchTap={this.toggleNav.bind(this)} />
         <LeftNav docked={false} width={300} open={this.state.open} onRequestChange={open => this.setState({open})}>
-          <MenuItem onTouchTap={() => { return this.handleLeftNav('/me/');}}>ME</MenuItem>
+          <MenuItem onTouchTap={() => { return this.handleLeftNav('/me/');}}>SUM4NTH</MenuItem>
           <MenuItem onTouchTap={() => { return this.handleLeftNav('/work/');}}>WORK</MenuItem>
           <MenuItem onTouchTap={() => { return this.handleLeftNav('/blog/');}}>BLOG</MenuItem>
           <MenuItem onTouchTap={() => { return this.handleLeftNav('/contact/');}}>CONTACT</MenuItem>
